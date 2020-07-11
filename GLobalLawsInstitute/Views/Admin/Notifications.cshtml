@@ -1,0 +1,73 @@
+﻿@model GLI.GlobalEntity.Notifications
+
+@{
+    ViewData["Title"] = "Arbitration";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="page-content" style="min-height:1269px">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="btn-group">
+                <button id="sample_editable_1_new" class="btn blue" onclick="@("window.location.href='" + @Url.Action("GetNotifications", "Admin") + "'");">
+                    Get Notification
+                </button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab_0">
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-gift"></i>Notification
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <!-- BEGIN FORM-->
+                @using (Html.BeginForm("Notifications", "Admin", FormMethod.Post, new { @class = "form-horizontal form-label-left" }))
+                {
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Notification<span style="color:red;">*</span></label>
+                            <div class="col-md-4">
+                                @Html.TextAreaFor(m => m.NotificationTitle, new { @class = "form-control input-circle", placeholder = "Enter Arbitration", @autocomplete = "off", @required = "required" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">From Date <span style="color:red;">*</span></label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(m => m.FromDate, new { @class = "form-control input-circle datePicker", placeholder = "From Date", @autocomplete = "off", @required = "required" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">To Date <span style="color:red;">*</span></label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(m => m.ToDate, new { @class = "form-control input-circle datePicker", placeholder = "To Date", @autocomplete = "off", @required = "required" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button type="submit" class="btn btn-circle blue">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>
+                        @*@if (HttpContextAccessor.HttpContext.Session.GetString("UserName") != null)
+                        {
+                            HttpContextAccessor.HttpContext.Session.GetString("UserName");
+                        }*@
+                    </h1>
+                }
+                <!-- END FORM-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

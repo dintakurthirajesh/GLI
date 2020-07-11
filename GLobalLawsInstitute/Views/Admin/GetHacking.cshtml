@@ -1,0 +1,77 @@
+﻿
+@model List<GLI.GlobalEntity.ArbitrationDTO>
+
+@{
+    ViewData["Title"] = "GetMediation";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="page-content" style="min-height:1269px">
+    <div class="portlet box blue">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-cogs"></i>Hacking
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="btn-group">
+                        <button id="sample_editable_1_new" class="btn blue" onclick="@("window.location.href='" + @Url.Action("Hacking", "Admin") + "'");">
+                            Add New <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                S.No
+                            </th>
+                            <th>
+                                Hacking Title
+                            </th>
+                            <th>
+                                Hacking Description
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{int rno = 1;}
+
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr role="row" class="odd">
+                                    <td class="sorting_1">
+                                        @rno
+                                    </td>
+                                    <td>
+                                        @item.Title
+                                    </td>
+                                    <td>
+                                        @item.Description
+                                    </td>
+                                    <td>
+                                        <a href='@("/Admin/EditHacking?Id=" + @item.Id)' class="btn btn-xs green">Edit</a>
+                                        @Html.ActionLink("Delete", "DeleteHacking", "Admin", new { ID = @item.Id, Name = "Hacking" }, new { @class = "btn btn-xs red" })
+                                    </td>
+                                </tr>
+                                rno = rno + 1;
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

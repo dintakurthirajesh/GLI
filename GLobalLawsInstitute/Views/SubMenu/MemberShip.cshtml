@@ -1,0 +1,235 @@
+﻿@model GLI.GlobalEntity.MemberShip
+
+@{
+    ViewData["Title"] = "MemberShip";
+    Layout = "~/Views/Shared/SubLayout.cshtml";
+}
+<title>Membership Registration Form</title>
+<script src="~/Content/Scripts/jquery-3.3.1.js"></script>
+@*<style>
+        .form-control:focus {
+            border: 2px solid #c5b923;
+            box-shadow: none;
+        }
+
+        /* Paste this css to your style sheet file or under head tag */
+        /* This only works with JavaScript,
+        if it's not present, don't show loader */
+        .no-js #loader {
+            display: none;
+        }
+
+        .js #loader {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
+        }
+    </style>*@
+
+<div class="page-content">
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab_0">
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-gift"></i>MemberShip Registration Form
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    @using (Html.BeginForm("MemberShip", "SubMenu", FormMethod.Post, new { @class = "form-horizontal form-label-left" }))
+                    {
+                        <div class="form-body">
+
+                            <div class="form-group">
+                                <div class="row text-center" style="max-width: 100%;float:center">
+                                    @if (ViewBag.Membership != null)
+                                    {
+                                        <label id="lblerror" style="background-color:red" class="form-control">@ViewBag.Membership</label>
+                                    }
+                                    @if (ViewBag.Message != null)
+                                    {
+                                        <label id="lblmessage" style="background-color:red" class="form-control">@ViewBag.Message</label>
+                                    }
+                                    <div class="se-pre-con"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2 text-center control-label">Name <span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name", @autocomplete = "off", @id = "Name", @required = "required" })
+                                </div>
+
+                                <label class="col-md-2 text-center control-label">Father's Name <span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.FatherName, new { @class = "form-control", placeholder = "Father's Name", @id = "FatherName", @autocomplete = "off", @required = "required" })
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2 text-center control-label">Date of Birth <span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.DOB, new { @class = "form-control", placeholder = "Date of Birth", @autocomplete = "off", @required = "required", @id = "txtDate" })
+                                </div>
+
+                                <label class="col-md-2 text-centercontrol-label">Nationality<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.Nationality, new { @class = "form-control", placeholder = "Nationality", @autocomplete = "off", @id = "Nationality", @required = "required" })
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2  text-center control-label">Qualifications<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.Qualification, new { @class = "form-control", placeholder = "Qualifications", @autocomplete = "off", @id = "Qualification", @required = "required" })
+                                </div>
+                                <label class="col-md-2 text-center control-label">City<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.City, new { @class = "form-control", placeholder = "City", @autocomplete = "off", @id = "City", @required = "required" })
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2 text-center control-label">Country<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.DropDownListFor(model => model.Country, new SelectList(""), "--Select--", new { @id = "op1", @class = "form-control", @required = "required" })
+                                    @Html.ValidationMessageFor(model => model.Pin, "", new { @class = "text-danger" })
+                                </div>
+
+                                <label class="col-md-2 text-center control-label">Pin Number<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.Pin, new { @class = "form-control", placeholder = "PinCode", @autocomplete = "off", @required = "required", @maxlength = "6", @id = "PinCode" })
+                                    @Html.ValidationMessageFor(model => model.Pin, "", new { @class = "text-danger" })
+                                </div>
+                                @*<label class="col-md-2 text-center control-label">Phone No<span style="color:red;">*</span></label>
+                                    <div class="col-md-4">
+                                        @Html.TextBoxFor(m => m.PhoneNo, new { @class = "form-control", placeholder = "PhoneNo", @autocomplete = "off", @required = "required", maximumlenth = "10", @id = "PhoneNo" })
+                                        @Html.ValidationMessageFor(model => model.PhoneNo, "", new { @class = "text-danger" })
+                                    </div>*@
+
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2 text-center control-label">Email<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email", @autocomplete = "off", @required = "required", @id = "Email", onclick = "ValidateEmail()" })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", @id = "Error" })
+                                </div>
+                                <label class="col-md-2 text-center control-label">Mobile Number<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.MobileNo, new { @class = "form-control", placeholder = "Mobile No", @autocomplete = "off", @required = "required", maximumlenth = "10", @id = "Mobile" })
+                                    @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2 text-center control-label">Profession<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextAreaFor(m => m.Profession, new { @class = "form-control", placeholder = "Profession", @autocomplete = "off", @required = "required", @id = "Profession" })
+                                </div>
+
+                                <label class="col-md-2 text-center control-label">Other Details<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextAreaFor(m => m.OtherDetails, new { @class = "form-control", placeholder = "OtherDetails", @autocomplete = "off", @required = "required", maximumlenth = "10", @id = "OtherDetails" })
+                                </div>
+
+                            </div>
+                            <div class="form-group row col-md-12">
+                                @*<select id="op1" data-search="true">
+                                    </select>*@
+
+                                @*<label class="col-md-2 text-center control-label">Password<span style="color:red;">*</span></label>
+                                    <div class="col-md-4">
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password", @autocomplete = "off", @required = "required", @id = "txtPassword" })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @id = "password_strength" })
+
+                                    </div>*@
+                                <label class="col-md-2 text-center control-label">Photo Upload<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.PhotoContent, new { type = "file", @id = "FileUpload" })
+                                    @*<input type="file" name="PhotoContent" required  />*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn btn-circle blue" id="Submit">Submit</button>
+                                    <button type="button" class="btn btn-circle green" id="Clear">Clear</button>
+                                </div>
+                            </div>
+                        </div>
+                        <h1>
+                            @if (Session["UserName"] != null)
+                            {
+                                Session["UserName"].ToString();
+                            }
+                        </h1>
+                    }
+
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+     $(document).ready(function () {
+
+         $.ajax({
+                  type: "Get",
+                   url: '@Url.Action("GetCountries", "SubMenu")',
+                   datatype: "json",
+                    success: function (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            var opt = new Option(data[i].CountryName, data[i].Id);
+                            $('#op1').append(opt);
+                        }
+                    }
+                });
+     });
+
+    if ($('#lblerror').val('') != null) {
+        setTimeout(function () {
+            $('#lblerror').fadeOut('fast');
+            $('#lblerror').val('');
+            $('#Email').val('');
+            $('#password').val('');
+        }, 5000);
+    };
+    if ($('#lblmessage').val('')  == null) {
+        setTimeout(function () {
+            $('#lblmessage').fadeOut('fast');
+            $('#lblmessage').val('');
+            $('#lblerror').val('');
+            window.location.href = '/Home/Login';
+        }, 5000);
+    };
+    $("#Clear").click(function () {
+        $('#Name').val('');
+        $('#FatherName').val('');
+        $('#txtDate').val('');
+        $('#Nationality').val('');
+        $('#Qualification').val('');
+        $('#City').val('');
+        $('#PinCode').val('');
+        $('#PhoneNo').val('');
+        $('#Email').val('');
+        $('#Mobile').val('');
+        $('#Profession').val('');
+        $('#OtherDetails').val('');
+        $('#txtPassword').val('');
+    });
+
+
+
+</script>

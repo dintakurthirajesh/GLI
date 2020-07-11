@@ -1,0 +1,66 @@
+﻿
+
+@model  GLI.GlobalEntity.ArbitrationDTO
+
+
+@{
+    ViewData["Title"] = "EditHacking";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="page-content" style="min-height:1269px">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="btn-group">
+                <button id="sample_editable_1_new" class="btn blue" onclick="@("window.location.href='" + @Url.Action("GetHacking", "Admin") + "'");">
+                    Get Hacking
+                </button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab_0">
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-gift"></i>Hacking
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    @using (Html.BeginForm("UpdateHacking", "Admin", FormMethod.Post, new { @class = "form-horizontal form-label-left" }))
+                    {
+                        @Html.HiddenFor(m => m.Id)
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Hacking Title</label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control input-circle", placeholder = "Enter Title", @autocomplete = "off", @required = "required" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Hacking Description</label>
+                                <div class="col-md-4">
+                                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control input-circle", placeholder = "Enter Description", @autocomplete = "off", @required = "required", @rows = "5" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn btn-circle blue">Update</button>
+                                    <button type="button" class="btn btn-circle default" onclick="@("window.location.href='" + @Url.Action("GetHacking", "Admin") + "'");">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

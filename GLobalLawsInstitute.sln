@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.62
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLobalLawsInstitute", "GLobalLawsInstitute\GLobalLawsInstitute.csproj", "{7FEC93DB-227E-4509-96B4-CA7C37B4632A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalDataEntity", "GlobalDataEntity\GlobalDataEntity.csproj", "{0053C303-63E8-415B-8570-333343E8F4A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLIDAL", "GLIDAL\GLIDAL.csproj", "{208BAFF3-0BB6-4B91-AA89-74DFC6A5CBD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLIBAL", "GLBAL\GLIBAL.csproj", "{ACB3BBA1-F04B-4AA6-B32D-12B33FBA868E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FEC93DB-227E-4509-96B4-CA7C37B4632A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FEC93DB-227E-4509-96B4-CA7C37B4632A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FEC93DB-227E-4509-96B4-CA7C37B4632A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FEC93DB-227E-4509-96B4-CA7C37B4632A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0053C303-63E8-415B-8570-333343E8F4A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0053C303-63E8-415B-8570-333343E8F4A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0053C303-63E8-415B-8570-333343E8F4A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0053C303-63E8-415B-8570-333343E8F4A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{208BAFF3-0BB6-4B91-AA89-74DFC6A5CBD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{208BAFF3-0BB6-4B91-AA89-74DFC6A5CBD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{208BAFF3-0BB6-4B91-AA89-74DFC6A5CBD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{208BAFF3-0BB6-4B91-AA89-74DFC6A5CBD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACB3BBA1-F04B-4AA6-B32D-12B33FBA868E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB3BBA1-F04B-4AA6-B32D-12B33FBA868E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB3BBA1-F04B-4AA6-B32D-12B33FBA868E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB3BBA1-F04B-4AA6-B32D-12B33FBA868E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C31FF519-932B-4ADF-9519-2CD8C3DDADC5}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/jaswanthangular0385
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GLBAL\\GLIBAL.csproj
+		SccProjectName1 = GLBAL
+		SccLocalPath1 = GLBAL
+		SccProjectUniqueName2 = GLIDAL\\GLIDAL.csproj
+		SccProjectName2 = GLIDAL
+		SccLocalPath2 = GLIDAL
+		SccProjectUniqueName3 = GlobalDataEntity\\GlobalDataEntity.csproj
+		SccProjectName3 = GlobalDataEntity
+		SccLocalPath3 = GlobalDataEntity
+		SccProjectUniqueName4 = GLobalLawsInstitute\\GLobalLawsInstitute.csproj
+		SccProjectName4 = GLobalLawsInstitute
+		SccLocalPath4 = GLobalLawsInstitute
+	EndGlobalSection
+EndGlobal

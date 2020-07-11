@@ -1,0 +1,177 @@
+﻿@model GLI.GlobalEntity.MemberShip
+
+@{
+    ViewData["Title"] = "MemberShip";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<script src="~/Content/Scripts/jquery-3.3.1.js"></script>
+
+<style>
+    .form-control:focus {
+        border: 2px solid #c5b923;
+        box-shadow: none;
+    }
+</style>
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="btn-group">
+                <button id="sample_editable_1_new" class="btn blue" onclick="@("window.location.href='" + @Url.Action("GetMemberShip", "User") + "'");">
+                    Get MemberShip
+                </button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab_0">
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-gift"></i>Edit Membership : <span class="alert-heading" style="color:aqua">@Session["UserName"].ToString()</span>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    @using (Html.BeginForm("EditMembership", "User", FormMethod.Post, new { @class = "form-horizontal form-label-left" }))
+                    {
+
+                        <div class="form-body">
+                            <div class="form-group">
+                                <div class="row text-center" style="max-width: 100%;float:center">
+                                    @if (ViewBag.Membership != null)
+                                    {
+                                        <label id="lblerror" style="background-color:red" class="form-control">@ViewBag.Membership</label>
+                                    }
+                                    <div class="row text-center" style="max-width: 100%;float:center">
+                                        @if (ViewBag.Message != null)
+                                        {
+                                            <label id="lblmessage" style="background-color:red" class="form-control">@ViewBag.Message</label>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2 text-center control-label">Name <span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name", @autocomplete = "off", @required = "required", onmouseover = "fncAddolor('this.id')" })
+                                </div>
+
+                                <label class="col-md-2 text-center control-label">Father's Name <span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.FatherName, new { @class = "form-control", placeholder = "Father's Name", @autocomplete = "off", @required = "required" })
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2 text-center control-label">Date of Birth <span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.DOB, new { @class = "form-control", placeholder = "Date of Birth", @autocomplete = "off", @required = "required" })
+                                </div>
+
+                                <label class="col-md-2 text-centercontrol-label">Nationality<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.Nationality, new { @class = "form-control", placeholder = "Nationality", @autocomplete = "off", @required = "required" })
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2  text-center control-label">Qualifications<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.Qualification, new { @class = "form-control", placeholder = "Qualifications", @autocomplete = "off", @required = "required" })
+                                </div>
+                                <label class="col-md-2 text-center control-label">City<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.City, new { @class = "form-control", placeholder = "City", @autocomplete = "off", @required = "required" })
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2 text-center control-label">Pin Number<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.Pin, new { @class = "form-control", placeholder = "PinCode", @autocomplete = "off", @required = "required", @maxlength = "6" })
+                                    @Html.ValidationMessageFor(model => model.Pin, "", new { @class = "text-danger" })
+                                </div>
+                                <label class="col-md-2 text-center control-label">Phone No<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.PhoneNo, new { @class = "form-control", placeholder = "PhoneNo", @autocomplete = "off", @required = "required", maximumlenth = "10" })
+                                    @Html.ValidationMessageFor(model => model.PhoneNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2 text-center control-label">Email<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email", @autocomplete = "off", @required = "required", @id = "Email" })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                                <label class="col-md-2 text-center control-label">Mobile Number<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.MobileNo, new { @class = "form-control", placeholder = "Mobile No", @autocomplete = "off", @required = "required", maximumlenth = "10" })
+                                    @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2 text-center control-label">Profession<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextAreaFor(m => m.Profession, new { @class = "form-control", placeholder = "Profession", @autocomplete = "off", @required = "required" })
+                                </div>
+                                <label class="col-md-2 text-center control-label">Other Details<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextAreaFor(m => m.OtherDetails, new { @class = "form-control", placeholder = "OtherDetails", @autocomplete = "off", @required = "required", maximumlenth = "10" })
+                                </div>
+                            </div>
+                            <div class="form-group row col-md-12">
+                                <label class="col-md-2 text-center control-label">Photo Upload<span style="color:red;">*</span></label>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(m => m.PhotoContent, new { type = "file", @id = "FileUpload" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn btn-circle blue">Submit</button>
+                                    <button type="button" class="btn btn-circle green" href="javascript:void(0);">Clear</button>
+                                </div>
+                            </div>
+                        </div>
+                        <h1>
+                            @if (Session["UserName"] != null)
+                            {
+                                Session["UserName"].ToString();
+                            }
+                        </h1>
+                    }
+
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+    if ($('#lblerror').val('') != "") {
+
+        setTimeout(function () {
+            $('#lblerror').fadeOut('fast');
+            $('#lblerror').val('');
+            $('#Email').val('');
+            $('#password').val('');
+        }, 5000);
+    };
+    if ($('#lblmessage').val('') != null) {
+        setTimeout(function () {
+            $('#lblmessage').fadeOut('fast');
+            //window.location.href = '/Home/Login/';
+        }, 5000);
+    };
+
+////if ($('#lblmessage').val('') != null) {
+////    window.setTimeout(function () {
+////        window.location.href = '/Home/Login/';
+////    }, 100000);
+////}
+
+
+</script>

@@ -1,0 +1,112 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="@Url.Content("~/Content/images/Title.PNG")">
+    <title>Global Laws Institute</title>    
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <link href="~/Content/HomeCss/all.css" rel="stylesheet" />
+    <link href="~/Content/HomeCss/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/HomeCss/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/Content/HomeCss/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="~/Content/HomeCss/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/HomeCss/fontstyles.css" rel="stylesheet" />
+
+</head>
+<body>
+    @* Header *@
+    <header>
+        <div class="head-top">
+        </div>
+        <div>
+            <img src="~/Homeimages/Header.png" class="img-fluid" />
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-md navbar-dark menu-bar" style="background-color:aliceblue">
+        <!-- Navbar content -->
+        @*<a href="@Url.Action("Index", "Home")" class="navbar-brand" style="color:#ffffff !important;"><i class="fa fa-home"></i></a>*@
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">Home </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">People</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("MemberShip", "SubMenu")">Membership</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Login", "Home")">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="clearfix"></div>
+    <div>
+        @RenderBody()
+    </div>
+    <div class="container-fluid body-content text-center">
+        <hr />
+        <footer class="footer" style="background-color:aliceblue;color:black">
+            <h4>Total Visits Count : 50</h4>@*@ViewData["HitCount"].ToString()</h4>*@
+        </footer>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="container-fluid body-content text-center">
+        <hr />
+        <footer class="footer" style="background-color:aliceblue;color:black">
+            <p> This Site is Designed and Developed by Jaswanth Team --@DateTime.Now.Year</p>
+        </footer>
+    </div>
+    @*<footer class="glb-footer mt-2">
+
+            <div class="container">
+                <div class="form-group">
+                    <div class="col-md-12 row">
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 float-right">
+                    <ul class="fa-ul">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Publications</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>*@
+    <script src="~/Content/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Content/Scripts/bootstrap.js"></script>
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
+</body>
+</html>
