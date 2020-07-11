@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\RajeshDintakurthi\Publish\GLI 08072020</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>03/18/2020 23:33:48</publishTime>
+    </File>
+    <File Include="bin/BouncyCastle.Crypto.dll">
+      <publishTime>03/18/2020 23:33:48</publishTime>
+    </File>
+    <File Include="bin/GLIDAL.dll">
+      <publishTime>07/08/2020 15:05:23</publishTime>
+    </File>
+    <File Include="bin/GLIDAL.pdb">
+      <publishTime>07/08/2020 15:05:23</publishTime>
+    </File>
+    <File Include="bin/GlobalDataEntity.dll">
+      <publishTime>07/08/2020 15:05:23</publishTime>
+    </File>
+    <File Include="bin/GlobalDataEntity.pdb">
+      <publishTime>07/08/2020 15:05:23</publishTime>
+    </File>
+    <File Include="bin/GLobalLawsInstitute.dll">
+      <publishTime>07/08/2020 15:05:25</publishTime>
+    </File>
+    <File Include="bin/GLobalLawsInstitute.dll.config">
+      <publishTime>03/25/2020 09:57:55</publishTime>
+    </File>
+    <File Include="bin/GLobalLawsInstitute.pdb">
+      <publishTime>07/08/2020 15:05:25</publishTime>
+    </File>
+    <File Include="bin/Google.Protobuf.dll">
+      <publishTime>03/18/2020 23:33:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>03/18/2020 23:33:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>03/18/2020 23:33:48</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>03/18/2020 23:33:48</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/18/2020 23:33:51</publishTime>
+    </File>
+    <File Include="bin/Renci.SshNet.dll">
+      <publishTime>03/18/2020 23:33:51</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>03/18/2020 22:44:39</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>03/18/2020 22:45:17</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>03/18/2020 22:44:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>03/18/2020 22:45:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>03/18/2020 22:44:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>03/18/2020 22:45:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>03/18/2020 22:44:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>03/18/2020 22:45:07</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>03/18/2020 22:45:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>03/18/2020 22:45:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>03/18/2020 23:33:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>03/18/2020 23:33:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>03/18/2020 23:33:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>03/18/2020 23:33:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>03/18/2020 23:33:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>03/18/2020 23:33:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>03/18/2020 23:33:52</publishTime>
+    </File>
+    <File Include="bin/Ubiety.Dns.Core.dll">
+      <publishTime>03/18/2020 23:33:52</publishTime>
+    </File>
+    <File Include="bin/Ubiety.Logging.Core.dll">
+      <publishTime>03/18/2020 23:33:52</publishTime>
+    </File>
+    <File Include="bin/Ubiety.StyleCop.dll">
+      <publishTime>03/18/2020 23:33:52</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>03/18/2020 23:33:52</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

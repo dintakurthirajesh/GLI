@@ -1,0 +1,55 @@
+﻿@model List<GLI.GlobalEntity.ArbitrationDTO>
+@{
+    ViewData["Title"] = "Copy Rights";
+    Layout = "~/Views/Shared/SubLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header text-center">
+                        <h4 class="panel-title" style="background-color:darkseagreen;padding: 10px 0px 10px 0px;"><b>Copy Rights</b></h4>
+                    </div>
+                    <div class="accordianbody">
+                        @*<div class="narrowchart">*@
+                        <div id="accordion" class="col-md-12">
+                            @if (Model != null && Model.Count > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <div class="accordion accordianheader">
+                                        <h3 style="margin-top: 0px;margin-bottom: 0px;padding:2px 2px;">
+                                            @item.Title <i class="fa fa-angle-down"></i>
+                                        </h3>
+                                    </div>
+                                    <div class="accordianbody" id="accordbody">
+                                        <ul>
+                                            <li>
+                                                <address class="justify-content-end">@item.Description</address>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="form-group">
+                                    <div class="row text-center col-md-12">
+                                        <label id="lblerror" >No Data Found</label>
+                                        @*style="background-color:aquamarine"*@
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
