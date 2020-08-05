@@ -1,0 +1,48 @@
+﻿@model  GLI.GlobalEntity.ArbitrationDTO
+
+@{
+    ViewData["Title"] = "Arbitration";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+    <link href="~/Content/RichTextEditor/example.css" rel="stylesheet" />
+
+
+<div class="page-content" style="min-height:1269px">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="btn-group">
+                <button id="sample_editable_1_new" class="btn blue" onclick="@("window.location.href='" + @Url.Action("GetDepartment", "Admin") + "'");">
+                    Get Arbitration
+                </button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab_0">
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-gift"></i>Arbitration
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    @using (Html.BeginForm("RichTextEditor", "Admin", FormMethod.Post, new { @class = "form-horizontal form-label-left" }))
+                    {
+                        <div class="form-body">
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Arbitration Description <span style="color:red;">*</span></label>
+                                @Html.Raw(ViewBag.Editor);
+                            </div>
+                        </div>
+                    }
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
