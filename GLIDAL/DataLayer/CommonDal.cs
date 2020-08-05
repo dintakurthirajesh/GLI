@@ -11,9 +11,12 @@ namespace GlobalDal.DataLayer
     public class CommonDal : CommonMethods
     {
         IDBManager dbManager = null;
+<<<<<<< HEAD
 
         string Ip = HttpContext.Current.Request.UserHostAddress;
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
         public CommonDal()
         {
             if (dbManager == null)
@@ -278,8 +281,13 @@ namespace GlobalDal.DataLayer
             return _lm;
         }
 
+<<<<<<< HEAD
 
         /*Insert Arbitration*/
+=======
+        #region Arbitration
+        //Insert Department
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
         public bool InsertArbitration(ArbitrationDTO AR)
         {
             bool _val = false;
@@ -438,7 +446,11 @@ namespace GlobalDal.DataLayer
             return _val;
         }
         #endregion
+<<<<<<< HEAD
 
+=======
+        #endregion
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
 
         #region DeleteArbitration
         public bool DeleteArbitration(int id, string R)
@@ -1818,6 +1830,7 @@ namespace GlobalDal.DataLayer
             IDataReader dr = null;
             MastersDTO _obj = null;
             List<MastersDTO> _lst = null;
+<<<<<<< HEAD
 
             dbManager.Open();
             dbManager.BeginTransaction();
@@ -1950,5 +1963,28 @@ namespace GlobalDal.DataLayer
     }
     #endregion
 }
+=======
+           
+                dbManager.Open();
+                dbManager.BeginTransaction();
+                //dbManager.CreateParameters(1);
+                //dbManager.AddParameters(0, "Action", 'R', ParameterDirection.Input, DaoConstants.InParamSize);
+                dr = dbManager.ExecuteReader(CommandType.StoredProcedure, "GLI_Countries");
+                _lst = new List<MastersDTO>();
+                while (dr.Read())
+                {
+                    _obj = new MastersDTO();
+                    _obj.Id = Convert.ToInt32((dr["Id"]));
+                    _obj.CountryName = ((dr["CountryName"]).ToString());
+                    _obj.CountryCode = ((dr["CountryCode"]).ToString());
+                    _lst.Add(_obj);
+                }
+                dr.Close();
+                return _lst;
+            }         
+        }
+        #endregion
+    }
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
 
 

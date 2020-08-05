@@ -14,7 +14,10 @@ namespace GLI.GlobalEntity
         public string Description { get; set; }
         public string CreatedBy { get; set; }
         public string Action { get; set; }
+<<<<<<< HEAD
       
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     }
 }

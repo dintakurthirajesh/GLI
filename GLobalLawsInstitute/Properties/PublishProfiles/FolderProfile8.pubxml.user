@@ -16,6 +16,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/18/2020 23:33:48</publishTime>
     </File>
     <File Include="bin/GLIDAL.dll">
+<<<<<<< HEAD
       <publishTime>07/27/2020 15:18:08</publishTime>
     </File>
     <File Include="bin/GLIDAL.pdb">
@@ -35,6 +36,27 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/GLobalLawsInstitute.pdb">
       <publishTime>07/27/2020 15:18:39</publishTime>
+=======
+      <publishTime>07/08/2020 15:05:23</publishTime>
+    </File>
+    <File Include="bin/GLIDAL.pdb">
+      <publishTime>07/08/2020 15:05:23</publishTime>
+    </File>
+    <File Include="bin/GlobalDataEntity.dll">
+      <publishTime>07/08/2020 15:05:23</publishTime>
+    </File>
+    <File Include="bin/GlobalDataEntity.pdb">
+      <publishTime>07/08/2020 15:05:23</publishTime>
+    </File>
+    <File Include="bin/GLobalLawsInstitute.dll">
+      <publishTime>07/08/2020 15:05:25</publishTime>
+    </File>
+    <File Include="bin/GLobalLawsInstitute.dll.config">
+      <publishTime>03/25/2020 09:57:55</publishTime>
+    </File>
+    <File Include="bin/GLobalLawsInstitute.pdb">
+      <publishTime>07/08/2020 15:05:25</publishTime>
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     </File>
     <File Include="bin/Google.Protobuf.dll">
       <publishTime>03/18/2020 23:33:48</publishTime>
@@ -54,12 +76,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Renci.SshNet.dll">
       <publishTime>03/18/2020 23:33:51</publishTime>
     </File>
+<<<<<<< HEAD
     <File Include="bin/RichTextEditor.dll">
       <publishTime>04/06/2018 16:40:18</publishTime>
     </File>
     <File Include="bin/richtexteditor.lic">
       <publishTime>07/15/2020 21:12:19</publishTime>
     </File>
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <File Include="bin/roslyn/csc.exe.config">
       <publishTime>03/18/2020 22:44:39</publishTime>
     </File>

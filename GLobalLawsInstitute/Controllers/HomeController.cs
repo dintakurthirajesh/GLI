@@ -7,7 +7,10 @@ using System.Net.Mail;
 using System.Net;
 using System.Collections.Generic;
 using System.Web.Security;
+<<<<<<< HEAD
 using System.Linq;
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
 
 namespace GLobalLawsInstitute.Controllers
 {
@@ -22,6 +25,20 @@ namespace GLobalLawsInstitute.Controllers
                 cdal = new CommonDal();
                 cdall = new CommonDal();
                 List<Notifications> lst = cdal.GetNotification();
+<<<<<<< HEAD
+=======
+
+                //Notifications not = cdall.GetHitCount();
+                //if (not.HitCount != null)
+                //{
+                //    ViewData["HitCount"] = not.HitCount;
+                //}
+                //else
+                //{
+                //    ViewData["HitCount"] = null;
+                //}
+
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
                 return View(lst);
             }
             catch (Exception ex)
@@ -58,6 +75,7 @@ namespace GLobalLawsInstitute.Controllers
                             Session["MemberShipId"] = login.MemberShipId;
                             string name = login.DisplayName;
 
+<<<<<<< HEAD
                             /*Bind Menus to Admin DashBoard*/
                             CommonDal _da = null;
                             _da = new CommonDal();
@@ -66,6 +84,8 @@ namespace GLobalLawsInstitute.Controllers
                             Session["GetMenus"] = GetMenus;
 
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
                             if (login.RoleId == 1)
                             {
                                 return RedirectToAction("Arbitration", "Admin");
@@ -94,7 +114,10 @@ namespace GLobalLawsInstitute.Controllers
                 return RedirectToAction("Error", "Home");
             }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
         public ActionResult Error()
         {
             FormsAuthentication.SignOut();
@@ -150,7 +173,10 @@ namespace GLobalLawsInstitute.Controllers
             return View();
 
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
@@ -162,6 +188,7 @@ namespace GLobalLawsInstitute.Controllers
             return View();
         }
 
+<<<<<<< HEAD
         public JsonResult GetCountries()
         {
             CommonDal _da = null;
@@ -183,6 +210,8 @@ namespace GLobalLawsInstitute.Controllers
             }
         }
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
 
     }
 }

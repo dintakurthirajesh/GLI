@@ -192,6 +192,7 @@ namespace GLobalLawsInstitute.Controllers
                 _da = null;
             }
         }
+<<<<<<< HEAD
 
         public ActionResult SaveMyCode()
         {
@@ -218,5 +219,7 @@ namespace GLobalLawsInstitute.Controllers
         }
 
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     }
 }

@@ -53,10 +53,13 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="CuteEditor, Version=6.7.0.0, Culture=neutral, PublicKeyToken=3858aa6802b1223a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Bin\CuteEditor.dll</HintPath>
     </Reference>
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -67,18 +70,26 @@
     <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="RichTextEditor, Version=8.2.0.0, Culture=neutral, PublicKeyToken=3858aa6802b1223a, processorArchitecture=MSIL">
       <HintPath>..\packages\RichTextEditor.8.2.0.9\lib\RichTextEditor.dll</HintPath>
     </Reference>
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
+<<<<<<< HEAD
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
+=======
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <Reference Include="System.Management" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
@@ -163,9 +174,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\RichtextEditorController.cs" />
     <Compile Include="Controllers\SubMenuController.cs" />
     <Compile Include="Controllers\TestEditorController.cs" />
+=======
+    <Compile Include="Controllers\SubMenuController.cs" />
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,7 +208,10 @@
     <Content Include="bin\Newtonsoft.Json.xml" />
     <Content Include="bin\Renci.SshNet.dll" />
     <Content Include="bin\Renci.SshNet.xml" />
+<<<<<<< HEAD
     <Content Include="bin\RichTextEditor.dll" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <Content Include="bin\roslyn\csc.exe" />
     <Content Include="bin\roslyn\csi.exe" />
     <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
@@ -250,8 +268,11 @@
     <Content Include="bin\Ubiety.Logging.Core.xml" />
     <Content Include="bin\Ubiety.StyleCop.dll" />
     <Content Include="bin\WebGrease.dll" />
+<<<<<<< HEAD
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <Content Include="Content\css\Accordion.css" />
     <Content Include="Content\css\AdminLTE.min.css" />
     <Content Include="Content\css\bootstrap-datepicker.min.css" />
@@ -380,7 +401,10 @@
     <Content Include="Content\Homeimages\slide-2.jpg" />
     <Content Include="Content\images\back.png" />
     <Content Include="Content\images\right.png" />
+<<<<<<< HEAD
     <Content Include="Content\images\Title.PNG" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <Content Include="Content\lib\bootstrap\dist\css\bootstrap-grid.css" />
     <Content Include="Content\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
     <Content Include="Content\lib\bootstrap\dist\css\bootstrap-reboot.css" />
@@ -548,6 +572,7 @@
     <Content Include="Content\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="Content\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Content\plugins\timepicker\bootstrap-timepicker.min.js" />
+<<<<<<< HEAD
     <Content Include="Content\RichTextEditor\backgroundimage.css" />
     <Content Include="Content\RichTextEditor\bootstrap.js" />
     <Content Include="Content\RichTextEditor\bootstrap.min.js" />
@@ -572,6 +597,8 @@
     <Content Include="Content\RichTextEditor\sharetemplates.xml" />
     <None Include="Content\RichTextEditor\_references.js" />
     <Content Include="Content\RichTextEditor\summernote.js" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <Content Include="Content\Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />
@@ -590,7 +617,10 @@
     <Content Include="Content\Scripts\moment.min.js" />
     <Content Include="Content\Scripts\morris.min.js" />
     <Content Include="Content\Scripts\raphael.min.js" />
+<<<<<<< HEAD
     <Content Include="Content\Site.css" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <Content Include="Content\SliderImages\Slide1.jpg" />
     <Content Include="Content\SliderImages\Slide2.png" />
     <Content Include="Content\SliderImages\Slide3.jpg" />
@@ -608,6 +638,7 @@
     <Content Include="Homeimages\Merger.png" />
     <Content Include="Homeimages\slide-1.jpg" />
     <Content Include="Homeimages\slide-2.jpg" />
+<<<<<<< HEAD
     <Content Include="READ_ME.txt" />
     <Content Include="richtexteditor\aspnet\colorpicker.aspx" />
     <Content Include="richtexteditor\aspnet\colorpicker.xml" />
@@ -1693,6 +1724,8 @@
     <Content Include="uploads\_cache\thumb_PhotoPassport %283%29 %282%29 %281%29.jpg.png" />
     <Content Include="uploads\_cache\thumb_PhotoPassport %283%29 %283%29 %281%29.jpg.png" />
     <Content Include="uploads\_cache\thumb_PhotoPassport %283%29 %285%29.jpg.png" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1708,6 +1741,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\HomeLayout.cshtml" />
+<<<<<<< HEAD
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Admin\RichText.cshtml" />
     <Content Include="uploads\6-Rajesh mpr.pdf" />
@@ -1717,12 +1751,17 @@
     <Content Include="Views\Admin\GliLaws.cshtml" />
     <Content Include="Views\Admin\GetLaws.cshtml" />
     <Content Include="Views\User\SaveMyCode.cshtml" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Gallery\" />
     <Folder Include="Models\" />
+<<<<<<< HEAD
     <Folder Include="richtexteditor\dialogs\skins\gray\" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1770,10 +1809,13 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="bin\GLobalLawsInstitute.dll.config" />
+<<<<<<< HEAD
     <Content Include="doc\richtexteditor.chm" />
     <Content Include="doc\evaluation.rtf" />
     <Content Include="bin\richtexteditor.lic" />
     <Content Include="Content\RichTextEditor\jquery-1.10.2.min.map" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <None Include="packages.config" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
@@ -1820,6 +1862,7 @@
     <None Include="Properties\PublishProfiles\FolderProfile6.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile7.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile8.pubxml" />
+<<<<<<< HEAD
     <Content Include="richtexteditor\config\admin.config" />
     <Content Include="richtexteditor\config\default.config" />
     <Content Include="richtexteditor\config\guest.config" />
@@ -1871,6 +1914,8 @@
     <Content Include="Views\TestEditor\table_support.cshtml" />
     <Content Include="Views\TestEditor\toolbar_editor.cshtml" />
     <Content Include="Views\TestEditor\watermark.cshtml" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />

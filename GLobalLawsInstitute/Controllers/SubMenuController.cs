@@ -1,4 +1,8 @@
 ﻿using GLI.GlobalEntity;
+<<<<<<< HEAD
+=======
+using Global.Utility;
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
 using GlobalDal.DataLayer;
 using System;
 using System.Collections.Generic;

@@ -7,6 +7,7 @@ namespace GLI.GlobalEntity
     public class AdminMenu_DTO
     {
         public int? MenuId { get; set; }
+<<<<<<< HEAD
         public string MenuName { get; set; }       
 
         public int? MainMenuId { get; set; }
@@ -16,4 +17,10 @@ namespace GLI.GlobalEntity
         public string PageUrl { get; set; }
     }
 
+=======
+        public string MenuName { get; set; }
+        public int? MainMenuId { get; set; }
+
+    }
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
 }

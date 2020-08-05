@@ -54,7 +54,10 @@
     <Compile Include="ErrorException.cs" />
     <Compile Include="ErrorLog.cs" />
     <Compile Include="ErrorViewModel.cs" />
+<<<<<<< HEAD
     <Compile Include="GliLaws.cs" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <Compile Include="HomeDTO.cs" />
     <Compile Include="ImageGallery.cs" />
     <Compile Include="LoginDTO.cs" />
@@ -63,7 +66,10 @@
     <Compile Include="MimeType.cs" />
     <Compile Include="Notifications.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="SaveMyCode.cs" />
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

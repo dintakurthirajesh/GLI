@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+<<<<<<< HEAD
 using System.IO;
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
 
 namespace GLI.GlobalEntity
 {

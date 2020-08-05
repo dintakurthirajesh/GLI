@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< HEAD
     <link rel="icon" type="image/x-icon" href="@Url.Content("~/Content/images/Title.PNG")">
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <title>Admin</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -40,11 +43,14 @@
     <link href="~/Content/css/components.css" rel="stylesheet" />
     <link href="~/Content/css/layout.css" rel="stylesheet" type="text/css" />
 
+<<<<<<< HEAD
     @*RichText*@
     <link href="~/Content/RichTextEditor/Site.css" rel="stylesheet" />
     <link href="~/Content/RichTextEditor/summernote.css" rel="stylesheet" />
 
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -118,6 +124,7 @@
                         <li class="treeview">
                             <i class="fa fa-pie-chart"></i>
                         <li><a href="/Admin/Notifications"><i class="fa fa-circle-o"></i>Notifications</a></li>
+<<<<<<< HEAD
                         @if (Session["GetMenus"] != null)
                         {
                             var _val = (List
@@ -148,6 +155,79 @@
                             }
                         }
 
+=======
+
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>Intellectual Property Rights</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/TradeMarks"><i class="fa fa-circle-o"></i> Trademarks</a></li>
+                                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Patents</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>Cyber Laws</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/CopyRights"><i class="fa fa-circle-o"></i>CopyRights</a></li>
+                                <li><a href="/Admin/Hacking"><i class="fa fa-circle-o"></i> Hacking</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>Alternative Dispute Resolution</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="../Admin/Arbitration"><i class="fa fa-circle-o"></i> Arbitration</a></li>
+                                <li><a href="../Admin/Mediation"><i class="fa fa-circle-o"></i> Mediation</a></li>
+                                <li><a href="../Admin/Concillation"><i class="fa fa-circle-o"></i> Concillation</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>Employment Laws</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                @*<li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Arbitration</a></li>
+                                    <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Mediation</a></li>
+                                    <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Concillation</a></li>*@
+                                <li><a href="/Admin/Hacking"><i class="fa fa-circle-o"></i> Employment Laws</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>Merger & Acquisition</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                @*<li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Arbitration</a></li>
+                                    <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Mediation</a></li>
+                                    <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Concillation</a></li>*@
+                            </ul>
+                        </li>
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-pie-chart"></i>
@@ -160,6 +240,7 @@
                                 <li><a href="/Admin/DisplayMembership"><i class="fa fa-circle-o"></i>Display Membership</a></li>
                             </ul>
                         </li>
+<<<<<<< HEAD
                         @*<li class="treeview">
                                 <a href="#">
                                     <i class="fa fa-pie-chart"></i>
@@ -215,6 +296,8 @@
                                 </ul>
                             </li>*@
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
                     </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -225,6 +308,7 @@
                     @RenderBody()
                 </div>
             </div>
+<<<<<<< HEAD
 
             <footer class="main-footer">
                 @*<div class="pull-right hidden-xs">
@@ -232,6 +316,14 @@
                     </div>*@
                 @*<strong>Designed &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
                     reserved*@.
+=======
+            <footer class="main-footer">
+                @*<div class="pull-right hidden-xs">
+                    <b>Version</b> 2.4.13
+                </div>*@
+                @*<strong>Designed &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
+                reserved*@.
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
                 <strong>Designaed and Doveloped</strong>
             </footer>
 
@@ -435,7 +527,10 @@
     <!-- jQuery 3 -->
     @*<script src="~/js/bower_components/jquery/dist/jquery.min.js"></script>*@
     <script src="~/Content/Scripts/jquery.min.js"></script>
+<<<<<<< HEAD
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <!-- jQuery UI 1.11.4 -->
     @*<script src="~/js/bower_components/jquery-ui/jquery-ui.min.js"></script>*@
     <script src="~/Content/Scripts/jquery-ui.min.js"></script>
@@ -486,6 +581,7 @@
     <!-- AdminLTE for demo purposes -->
     @*<script src="~/dist/js/demo.js"></script>*@
     <script src="~/Content/Scripts/demo.js"></script>
+<<<<<<< HEAD
 
 
     <!-- include libraries(jQuery, bootstrap) -->
@@ -499,6 +595,8 @@
 
     <script src="~/Content/RichTextEditor/script-custom-editor.js"></script>
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     <script>
         function fncClear() {
             $('#txtTitle').val('');
@@ -519,6 +617,7 @@
                 inline: true
             });
         });
+<<<<<<< HEAD
 
         $(function () {
             $('#DataTables').DataTable()
@@ -533,5 +632,8 @@
         })
     </script>
     @RenderSection("scripts", required: false)
+=======
+    </script>
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
 </body>
 </html>

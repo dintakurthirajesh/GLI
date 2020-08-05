@@ -1,14 +1,25 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using GLI.GlobalEntity;
 using GlobalDal.DataLayer;
 using RTE;
+=======
+﻿using GLI.GlobalEntity;
+using GlobalDal.DataLayer;
+using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
 using static GLobalLawsInstitute.FilterConfig;
 
 namespace GLobalLawsInstitute.Controllers
 {
+<<<<<<< HEAD
 
+=======
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     public class AdminController : Controller
     {
         // GET: Admin 27 mar 2010
@@ -33,6 +44,7 @@ namespace GLobalLawsInstitute.Controllers
             }
         }
 
+<<<<<<< HEAD
         [NoDirectAccess]
         public ActionResult Arbitration()
         {
@@ -45,6 +57,12 @@ namespace GLobalLawsInstitute.Controllers
             //Editor1.AjaxPostbackUrl = Url.Action("EditorAjaxHandler");
             //Editor1.MvcInit();
             //ViewBag.Editor = Editor1.MvcGetString();
+=======
+        #region Arbitration
+        [NoDirectAccess]
+        public ActionResult Arbitration()
+        {
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
             return View();
         }
 
@@ -172,6 +190,10 @@ namespace GLobalLawsInstitute.Controllers
         }
         #endregion
 
+<<<<<<< HEAD
+=======
+        #endregion
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
 
         #region Mediation
         [NoDirectAccess]
@@ -827,7 +849,11 @@ namespace GLobalLawsInstitute.Controllers
             }
         }
         #endregion
+<<<<<<< HEAD
 
+=======
+       
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
 
         [NoDirectAccess]
         public ActionResult DisplayMembership()
@@ -851,6 +877,7 @@ namespace GLobalLawsInstitute.Controllers
             }
         }
 
+<<<<<<< HEAD
         public ActionResult RichText()
         {
             return View();
@@ -948,5 +975,8 @@ namespace GLobalLawsInstitute.Controllers
                 return RedirectToAction("Error", "Home");
             }
         }
+=======
+        #endregion
+>>>>>>> e1813bd233c9b4cf9444534e3dc776742aadd975
     }
 }
