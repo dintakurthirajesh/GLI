@@ -7,6 +7,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Collections.Generic;
 using System.Web.Security;
+using System.Linq;
 
 namespace GLobalLawsInstitute.Controllers
 {
@@ -21,17 +22,6 @@ namespace GLobalLawsInstitute.Controllers
                 cdal = new CommonDal();
                 cdall = new CommonDal();
                 List<Notifications> lst = cdal.GetNotification();
-
-                //Notifications not = cdall.GetHitCount();
-                //if (not.HitCount != null)
-                //{
-                //    ViewData["HitCount"] = not.HitCount;
-                //}
-                //else
-                //{
-                //    ViewData["HitCount"] = null;
-                //}
-
                 return View(lst);
             }
             catch (Exception ex)
@@ -68,6 +58,14 @@ namespace GLobalLawsInstitute.Controllers
                             Session["MemberShipId"] = login.MemberShipId;
                             string name = login.DisplayName;
 
+                            /*Bind Menus to Admin DashBoard*/
+                            CommonDal _da = null;
+                            _da = new CommonDal();
+                            List<AdminMenu_DTO> GetMenus = new List<AdminMenu_DTO>();
+                            GetMenus = _da.GetMenus();
+                            Session["GetMenus"] = GetMenus;
+
+
                             if (login.RoleId == 1)
                             {
                                 return RedirectToAction("Arbitration", "Admin");
@@ -96,6 +94,7 @@ namespace GLobalLawsInstitute.Controllers
                 return RedirectToAction("Error", "Home");
             }
         }
+
         public ActionResult Error()
         {
             FormsAuthentication.SignOut();
@@ -151,6 +150,7 @@ namespace GLobalLawsInstitute.Controllers
             return View();
 
         }
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
@@ -160,6 +160,27 @@ namespace GLobalLawsInstitute.Controllers
             Session["UserName"] = null;
             Session["RoleId"] = null;
             return View();
+        }
+
+        public JsonResult GetCountries()
+        {
+            CommonDal _da = null;
+            try
+            {
+                _da = new CommonDal();
+                List<MastersDTO> GetCountries = new List<MastersDTO>();
+                GetCountries = _da.GetCountries();
+                return Json(GetCountries, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                _da.ExceptionDtls(ex.Message, ex.GetType().ToString(), ex.StackTrace);
+                return Json("Error", "Home");
+            }
+            finally
+            {
+                _da = null;
+            }
         }
 
 

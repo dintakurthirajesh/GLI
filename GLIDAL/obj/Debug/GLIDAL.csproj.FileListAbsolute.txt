@@ -1,0 +1,9 @@
+D:\RajeshDintakurthi\GLITFS\GLIDAL\bin\Debug\GLIDAL.dll
+D:\RajeshDintakurthi\GLITFS\GLIDAL\bin\Debug\GLIDAL.pdb
+D:\RajeshDintakurthi\GLITFS\GLIDAL\bin\Debug\GlobalDataEntity.dll
+D:\RajeshDintakurthi\GLITFS\GLIDAL\bin\Debug\GlobalDataEntity.pdb
+D:\RajeshDintakurthi\GLITFS\GLIDAL\obj\Debug\GLIDAL.csprojAssemblyReference.cache
+D:\RajeshDintakurthi\GLITFS\GLIDAL\obj\Debug\GLIDAL.csproj.CoreCompileInputs.cache
+D:\RajeshDintakurthi\GLITFS\GLIDAL\obj\Debug\GLIDAL.csproj.CopyComplete
+D:\RajeshDintakurthi\GLITFS\GLIDAL\obj\Debug\GLIDAL.dll
+D:\RajeshDintakurthi\GLITFS\GLIDAL\obj\Debug\GLIDAL.pdb

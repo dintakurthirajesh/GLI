@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="@Url.Content("~/Content/images/Title.PNG")">
     <title>Admin</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -38,6 +39,11 @@
     <link href="~/Content/css/bootstrap3-wysihtml5.min.css" rel="stylesheet" />
     <link href="~/Content/css/components.css" rel="stylesheet" />
     <link href="~/Content/css/layout.css" rel="stylesheet" type="text/css" />
+
+    @*RichText*@
+    <link href="~/Content/RichTextEditor/Site.css" rel="stylesheet" />
+    <link href="~/Content/RichTextEditor/summernote.css" rel="stylesheet" />
+
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -112,77 +118,36 @@
                         <li class="treeview">
                             <i class="fa fa-pie-chart"></i>
                         <li><a href="/Admin/Notifications"><i class="fa fa-circle-o"></i>Notifications</a></li>
+                        @if (Session["GetMenus"] != null)
+                        {
+                            var _val = (List
+                        <GLI.GlobalEntity.AdminMenu_DTO>) Session["GetMenus"];
 
+                            foreach (var da in _val.Where(x => x.ParentId == 0))
+                            {
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="fa fa-pie-chart"></i>
+                                        <span>@da.SubMenu</span>
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
 
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-pie-chart"></i>
-                                <span>Intellectual Property Rights</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="/Admin/TradeMarks"><i class="fa fa-circle-o"></i> Trademarks</a></li>
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Patents</a></li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-pie-chart"></i>
-                                <span>Cyber Laws</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="/Admin/CopyRights"><i class="fa fa-circle-o"></i>CopyRights</a></li>
-                                <li><a href="/Admin/Hacking"><i class="fa fa-circle-o"></i> Hacking</a></li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-pie-chart"></i>
-                                <span>Alternative Dispute Resolution</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="../Admin/Arbitration"><i class="fa fa-circle-o"></i> Arbitration</a></li>
-                                <li><a href="../Admin/Mediation"><i class="fa fa-circle-o"></i> Mediation</a></li>
-                                <li><a href="../Admin/Concillation"><i class="fa fa-circle-o"></i> Concillation</a></li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-pie-chart"></i>
-                                <span>Employment Laws</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                @*<li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Arbitration</a></li>
-                                    <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Mediation</a></li>
-                                    <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Concillation</a></li>*@
-                                <li><a href="/Admin/Hacking"><i class="fa fa-circle-o"></i> Employment Laws</a></li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-pie-chart"></i>
-                                <span>Merger & Acquisition</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                @*<li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Arbitration</a></li>
-                                    <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Mediation</a></li>
-                                    <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Concillation</a></li>*@
-                            </ul>
-                        </li>
+                                    <ul class="treeview-menu">
+                                        @*<li><a href="/Admin/TradeMarks"><i class="fa fa-circle-o"></i> Trademarks</a></li>
+                                            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Patents</a></li>*@
+                                        @foreach (var da1 in _val.Where(x => x.ParentId == da.MainMenuId))
+                                        {
+                                            <li>
+                                                <a href="GliLaws/?MainMenuId=@da1.MainMenuId&MenuName=@da1.SubMenu&ParentId=@da1.ParentId&SubMenuId=@da1.SubMenuId"><i class="fa fa-circle-o"></i>@da1.SubMenu</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                        }
+
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-pie-chart"></i>
@@ -195,6 +160,61 @@
                                 <li><a href="/Admin/DisplayMembership"><i class="fa fa-circle-o"></i>Display Membership</a></li>
                             </ul>
                         </li>
+                        @*<li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-pie-chart"></i>
+                                    <span>Cyber Laws</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="/Admin/CopyRights"><i class="fa fa-circle-o"></i>CopyRights</a></li>
+                                    <li><a href="/Admin/Hacking"><i class="fa fa-circle-o"></i> Hacking</a></li>
+                                    <li><a href="/RichtextEditor/RichTextEditor"><i class="fa fa-circle-o"></i> RichText Editor</a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-pie-chart"></i>
+                                    <span>Alternative Dispute Resolution</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="../Admin/Arbitration"><i class="fa fa-circle-o"></i> Arbitration</a></li>
+                                    <li><a href="../Admin/Mediation"><i class="fa fa-circle-o"></i> Mediation</a></li>
+                                    <li><a href="../Admin/Concillation"><i class="fa fa-circle-o"></i> Concillation</a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-pie-chart"></i>
+                                    <span>Employment Laws</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="/Admin/Hacking"><i class="fa fa-circle-o"></i> Employment Laws</a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-pie-chart"></i>
+                                    <span>Merger & Acquisition</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Arbitration</a></li>
+                                    <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Mediation</a></li>
+                                    <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Concillation</a></li>
+                                </ul>
+                            </li>*@
+
                     </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -205,12 +225,13 @@
                     @RenderBody()
                 </div>
             </div>
+
             <footer class="main-footer">
                 @*<div class="pull-right hidden-xs">
-                    <b>Version</b> 2.4.13
-                </div>*@
+                        <b>Version</b> 2.4.13
+                    </div>*@
                 @*<strong>Designed &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
-                reserved*@.
+                    reserved*@.
                 <strong>Designaed and Doveloped</strong>
             </footer>
 
@@ -414,6 +435,7 @@
     <!-- jQuery 3 -->
     @*<script src="~/js/bower_components/jquery/dist/jquery.min.js"></script>*@
     <script src="~/Content/Scripts/jquery.min.js"></script>
+
     <!-- jQuery UI 1.11.4 -->
     @*<script src="~/js/bower_components/jquery-ui/jquery-ui.min.js"></script>*@
     <script src="~/Content/Scripts/jquery-ui.min.js"></script>
@@ -464,6 +486,19 @@
     <!-- AdminLTE for demo purposes -->
     @*<script src="~/dist/js/demo.js"></script>*@
     <script src="~/Content/Scripts/demo.js"></script>
+
+
+    <!-- include libraries(jQuery, bootstrap) -->
+    @*<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">*@
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- include summernote css/js -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+    <script src="~/Content/RichTextEditor/script-custom-editor.js"></script>
+
     <script>
         function fncClear() {
             $('#txtTitle').val('');
@@ -484,6 +519,19 @@
                 inline: true
             });
         });
+
+        $(function () {
+            $('#DataTables').DataTable()
+            $('#DataTables').DataTable({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            })
+        })
     </script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -1,5 +1,4 @@
 ﻿using GLI.GlobalEntity;
-using Global.Utility;
 using GlobalDal.DataLayer;
 using System;
 using System.Collections.Generic;

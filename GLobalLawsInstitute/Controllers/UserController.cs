@@ -192,5 +192,31 @@ namespace GLobalLawsInstitute.Controllers
                 _da = null;
             }
         }
+
+        public ActionResult SaveMyCode()
+        {
+            return View();
+        }
+        public JsonResult SaveMyData(SaveMyCode am)
+        {
+            CommonDal cdal = null;
+            try
+            {
+                cdal = new CommonDal();
+                bool value = cdal.SaveMyCode(am);
+                if (value)
+                {
+                    ViewData["Save"] = "Data Inserted Successfully";
+                }
+                return Json(value, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                cdal.ExceptionDtls(ex.Message, ex.GetType().ToString(), ex.StackTrace);
+                return Json("Error", "Home");
+            }
+        }
+
+
     }
 }

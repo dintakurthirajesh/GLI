@@ -155,6 +155,7 @@
                                 <div class="col-md-4">
                                     @Html.TextBoxFor(m => m.PhotoContent, new { type = "file", @id = "FileUpload" })
                                     @*<input type="file" name="PhotoContent" required  />*@
+                                     @Html.TextBox("file", "", new {  type= "file"})
                                 </div>
                             </div>
                         </div>

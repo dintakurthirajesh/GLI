@@ -1,0 +1,6 @@
+D:\RajeshDintakurthi\GLITFS\GlobalDataEntity\bin\Debug\GlobalDataEntity.dll
+D:\RajeshDintakurthi\GLITFS\GlobalDataEntity\bin\Debug\GlobalDataEntity.pdb
+D:\RajeshDintakurthi\GLITFS\GlobalDataEntity\obj\Debug\GlobalDataEntity.csproj.CoreCompileInputs.cache
+D:\RajeshDintakurthi\GLITFS\GlobalDataEntity\obj\Debug\GlobalDataEntity.dll
+D:\RajeshDintakurthi\GLITFS\GlobalDataEntity\obj\Debug\GlobalDataEntity.pdb
+D:\RajeshDintakurthi\GLITFS\GlobalDataEntity\obj\Debug\GlobalDataEntity.csprojAssemblyReference.cache

@@ -1,12 +1,14 @@
-﻿using GLI.GlobalEntity;
-using GlobalDal.DataLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using GLI.GlobalEntity;
+using GlobalDal.DataLayer;
+using RTE;
 using static GLobalLawsInstitute.FilterConfig;
 
 namespace GLobalLawsInstitute.Controllers
 {
+
     public class AdminController : Controller
     {
         // GET: Admin 27 mar 2010
@@ -31,10 +33,18 @@ namespace GLobalLawsInstitute.Controllers
             }
         }
 
-        #region Arbitration
         [NoDirectAccess]
         public ActionResult Arbitration()
         {
+            //Editor Editor1 = new Editor(System.Web.HttpContext.Current, "Editor1");
+            //Editor1.LoadFormData("Type here...");
+            //Editor1.Toolbar = "minimal";
+            //Editor1.ClientFolder = "/richtexteditor/"; 
+            //Editor1.ContentCss = "/richtexteditor/styles/richtexteditor.css"; //D:\RajeshDintakurthi\GLITFS\GLobalLawsInstitute\richtexteditor\styles\richtexteditor.css
+            //Editor1.LoadHtml("~/templates/template1.html");
+            //Editor1.AjaxPostbackUrl = Url.Action("EditorAjaxHandler");
+            //Editor1.MvcInit();
+            //ViewBag.Editor = Editor1.MvcGetString();
             return View();
         }
 
@@ -162,7 +172,6 @@ namespace GLobalLawsInstitute.Controllers
         }
         #endregion
 
-        #endregion
 
         #region Mediation
         [NoDirectAccess]
@@ -818,7 +827,7 @@ namespace GLobalLawsInstitute.Controllers
             }
         }
         #endregion
-       
+
 
         [NoDirectAccess]
         public ActionResult DisplayMembership()
@@ -842,6 +851,102 @@ namespace GLobalLawsInstitute.Controllers
             }
         }
 
+        public ActionResult RichText()
+        {
+            return View();
+        }
+        [HttpPost]
+        public JsonResult SaveArbitration(ArbitrationDTO AR)
+        {
+            CommonDal cdal = null;
+            try
+            {
+                //cdal = new CommonDal();
+                //List<MastersDTO> GetCountries = new List<MastersDTO>();
+                //GetCountries = _da.GetCountries();
+                //return Json(GetCountries, JsonRequestBehavior.AllowGet);
+
+                cdal = new CommonDal();
+                bool value = cdal.InsertArbitration(AR);
+                if (value)
+                {
+                    ViewData["Save"] = "Data Inserted Successfully";
+                }
+                return Json(value, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                cdal.ExceptionDtls(ex.Message, ex.GetType().ToString(), ex.StackTrace);
+                return Json("Error", "Home");
+            }
+        }
         #endregion
+
+        public ActionResult GliLaws(AdminMenu_DTO ado)
+        {
+            //int MainMenuId, string ManuName, int ParentId, int SubMenuId
+            /*View Bag Parameters*/
+            //ViewBag.MainMenuId = MainMenuId;
+            //ViewBag.MenuName = ManuName;
+            //ViewBag.ParentId = ParentId;
+            //ViewBag.SubMenuId = SubMenuId;
+
+            ViewBag.MainMenuId = ado.MainMenuId;
+            ViewBag.MenuName = ado.MenuName;
+            ViewBag.ParentId = ado.ParentId;
+            ViewBag.SubMenuId = ado.SubMenuId;
+
+
+            /*Session Parameters for Getting Title and Decription Menu Wise*/
+            Session["MainMenuId"] = ado.MainMenuId;
+            Session["ParentId"] = ado.ParentId;
+            Session["SubMenuId"] = ado.SubMenuId;
+            Session["MenuName"] = ado.MenuName;
+
+            Session["MennusList"] = ado;
+
+            return View();
+        }
+
+        public JsonResult InsertLaws(GliLaws am)
+        {
+            CommonDal cdal = null;
+            try
+            {
+                cdal = new CommonDal();
+                bool value = cdal.InsertLaws(am);
+                if (value)
+                {
+                    ViewData["Save"] = "Data Inserted Successfully";
+                }
+                return Json(value, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                cdal.ExceptionDtls(ex.Message, ex.GetType().ToString(), ex.StackTrace);
+                return Json("Error", "Home");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult GetLaws(GliLaws gl)
+        {
+            CommonDal _da = null;
+            try
+            {
+                _da = new CommonDal();
+                gl.MainMenuId = Convert.ToInt32(Session["MainMenuId"].ToString());
+                gl.ParentId = Convert.ToInt32(Session["ParentId"].ToString());
+                gl.SubMenuId = Convert.ToInt32(Session["SubMenuId"].ToString());
+                gl.SubMenu = Session["MenuName"].ToString();
+                List<GliLaws> gliList = _da.GetLaws(gl);
+                return View(gliList);
+            }
+            catch (Exception ex)
+            {
+                _da.ExceptionDtls(ex.Message, ex.GetType().ToString(), ex.StackTrace);
+                return RedirectToAction("Error", "Home");
+            }
+        }
     }
 }

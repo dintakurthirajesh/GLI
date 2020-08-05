@@ -11,6 +11,9 @@ namespace GlobalDal.DataLayer
     public class CommonDal : CommonMethods
     {
         IDBManager dbManager = null;
+
+        string Ip = HttpContext.Current.Request.UserHostAddress;
+
         public CommonDal()
         {
             if (dbManager == null)
@@ -275,8 +278,8 @@ namespace GlobalDal.DataLayer
             return _lm;
         }
 
-        #region Arbitration
-        //Insert Department
+
+        /*Insert Arbitration*/
         public bool InsertArbitration(ArbitrationDTO AR)
         {
             bool _val = false;
@@ -435,7 +438,7 @@ namespace GlobalDal.DataLayer
             return _val;
         }
         #endregion
-        #endregion
+
 
         #region DeleteArbitration
         public bool DeleteArbitration(int id, string R)
@@ -1815,26 +1818,137 @@ namespace GlobalDal.DataLayer
             IDataReader dr = null;
             MastersDTO _obj = null;
             List<MastersDTO> _lst = null;
-           
-                dbManager.Open();
-                dbManager.BeginTransaction();
-                //dbManager.CreateParameters(1);
-                //dbManager.AddParameters(0, "Action", 'R', ParameterDirection.Input, DaoConstants.InParamSize);
-                dr = dbManager.ExecuteReader(CommandType.StoredProcedure, "GLI_Countries");
-                _lst = new List<MastersDTO>();
-                while (dr.Read())
-                {
-                    _obj = new MastersDTO();
-                    _obj.Id = Convert.ToInt32((dr["Id"]));
-                    _obj.CountryName = ((dr["CountryName"]).ToString());
-                    _obj.CountryCode = ((dr["CountryCode"]).ToString());
-                    _lst.Add(_obj);
-                }
-                dr.Close();
-                return _lst;
-            }         
+
+            dbManager.Open();
+            dbManager.BeginTransaction();
+            //dbManager.CreateParameters(1);
+            //dbManager.AddParameters(0, "Action", 'R', ParameterDirection.Input, DaoConstants.InParamSize);
+            dr = dbManager.ExecuteReader(CommandType.StoredProcedure, "GLI_Countries");
+            _lst = new List<MastersDTO>();
+            while (dr.Read())
+            {
+                _obj = new MastersDTO();
+                _obj.Id = Convert.ToInt32((dr["Id"]));
+                _obj.CountryName = ((dr["CountryName"]).ToString());
+                _obj.CountryCode = ((dr["CountryCode"]).ToString());
+                _lst.Add(_obj);
+            }
+            dr.Close();
+            return _lst;
         }
-        #endregion
+
+        public List<AdminMenu_DTO> GetMenus()
+        {
+            IDataReader dr = null;
+            AdminMenu_DTO _obj = null;
+            List<AdminMenu_DTO> _lst = null;
+
+            dbManager.Open();
+            dbManager.BeginTransaction();
+            //dbManager.CreateParameters(1);
+            //dbManager.AddParameters(0, "Action", 'R', ParameterDirection.Input, DaoConstants.InParamSize);
+            dr = dbManager.ExecuteReader(CommandType.StoredProcedure, "SubMenu_IUDR");
+            _lst = new List<AdminMenu_DTO>();
+            while (dr.Read())
+            {
+                _obj = new AdminMenu_DTO();
+                _obj.MainMenuId = dr["MainMenuId"] == DBNull.Value ? default(int) : Convert.ToInt32((dr["MainMenuId"]));
+                _obj.SubMenu = dr["SubMenu"] == DBNull.Value ? string.Empty : dr["SubMenu"].ToString();
+                _obj.ParentId = dr["ParentId"] == DBNull.Value ? default(int) : Convert.ToInt32((dr["ParentId"]).ToString());
+                _obj.SubMenuId = dr["SubMenuId"] == DBNull.Value ? default(int) : Convert.ToInt32((dr["SubMenuId"]).ToString());
+                _obj.PageUrl = dr["PageUrl"] == DBNull.Value ? string.Empty : dr["PageUrl"].ToString();
+                _lst.Add(_obj);
+            }
+            dr.Close();
+            return _lst;
+        }
+
+        public bool InsertLaws(GliLaws AR)
+        {
+            bool _val = false;
+
+            dbManager.Open();
+            dbManager.BeginTransaction();
+            dbManager.CreateParameters(9);
+            dbManager.AddParameters(0, "Title", AR.Title, ParameterDirection.Input, DaoConstants.InParamSize);
+            dbManager.AddParameters(1, "Description", AR.Description, ParameterDirection.Input, DaoConstants.InParamSize);
+            dbManager.AddParameters(2, "MainMenuId", AR.MainMenuId, ParameterDirection.Input, DaoConstants.InParamSize);
+
+            dbManager.AddParameters(3, "SubMenu", AR.SubMenu, ParameterDirection.Input, DaoConstants.InParamSize);
+            dbManager.AddParameters(4, "ParentId", AR.ParentId, ParameterDirection.Input, DaoConstants.InParamSize);
+            dbManager.AddParameters(5, "SubMenuId", AR.SubMenuId, ParameterDirection.Input, DaoConstants.InParamSize);
+
+            dbManager.AddParameters(6, "PageUrl", AR.PageUrl, ParameterDirection.Input, DaoConstants.InParamSize);
+            dbManager.AddParameters(7, "Ip", Ip, ParameterDirection.Input, DaoConstants.InParamSize);
+            dbManager.AddParameters(8, "UserName", AR.UserName, ParameterDirection.Input, DaoConstants.InParamSize);
+
+            Int32 iResult = Convert.ToInt32(dbManager.ExecuteNonQuery(CommandType.StoredProcedure, "GLI_InsertLaws"));
+            if (iResult > 0)
+            {
+                dbManager.CommitTransaction();
+                _val = true;
+            }
+            else
+            {
+                dbManager.RollBackTransaction();
+                _val = false;
+            }
+            return _val;
+        }
+
+
+        public List<GliLaws> GetLaws(GliLaws gl)
+        {
+            IDataReader dr = null;
+            List<GliLaws> _lst = null;
+            GliLaws obj = null;
+
+            dbManager.Open();
+            dbManager.BeginTransaction();
+            dbManager.CreateParameters(3);
+            dbManager.AddParameters(0, "ParentId", gl.ParentId, ParameterDirection.Input, DaoConstants.InParamSize);
+            dbManager.AddParameters(1, "SubMenuId", gl.SubMenuId, ParameterDirection.Input, DaoConstants.InParamSize);
+            dbManager.AddParameters(2, "SubMenu",gl.SubMenu , ParameterDirection.Input, DaoConstants.InParamSize);
+            dr = dbManager.ExecuteReader(CommandType.StoredProcedure, "GLI_GetLaws");
+            _lst = new List<GliLaws>();
+            while (dr.Read())
+            {
+                obj = new GliLaws();
+                obj.Title = dr["Title"] == DBNull.Value ? string.Empty : dr["Title"].ToString();
+                obj.Description = dr["Title"] == DBNull.Value ? string.Empty : dr["Description"].ToString();
+                _lst.Add(obj);
+            }
+            dr.Close();
+            return _lst;
+        }
+
+
+        public bool SaveMyCode(SaveMyCode SC)
+        {
+            bool _val = false;
+
+            dbManager.Open();
+            dbManager.BeginTransaction();
+            dbManager.CreateParameters(9);
+            dbManager.AddParameters(0, "Title", SC.Title, ParameterDirection.Input, DaoConstants.InParamSize);
+            dbManager.AddParameters(1, "Description", SC.Description, ParameterDirection.Input, DaoConstants.InParamSize);
+            dbManager.AddParameters(2, "Ip", SC.Ip, ParameterDirection.Input, DaoConstants.InParamSize);
+
+            Int32 iResult = Convert.ToInt32(dbManager.ExecuteNonQuery(CommandType.StoredProcedure, "GLI_SaveMyCode"));
+            if (iResult > 0)
+            {
+                dbManager.CommitTransaction();
+                _val = true;
+            }
+            else
+            {
+                dbManager.RollBackTransaction();
+                _val = false;
+            }
+            return _val;
+        }
     }
+    #endregion
+}
 
 

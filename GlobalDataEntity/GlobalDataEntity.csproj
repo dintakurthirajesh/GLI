@@ -54,6 +54,7 @@
     <Compile Include="ErrorException.cs" />
     <Compile Include="ErrorLog.cs" />
     <Compile Include="ErrorViewModel.cs" />
+    <Compile Include="GliLaws.cs" />
     <Compile Include="HomeDTO.cs" />
     <Compile Include="ImageGallery.cs" />
     <Compile Include="LoginDTO.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="MimeType.cs" />
     <Compile Include="Notifications.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveMyCode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

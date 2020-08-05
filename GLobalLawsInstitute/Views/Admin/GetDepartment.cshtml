@@ -59,8 +59,8 @@
                                     <td>
                                         @item.Title
                                     </td>
-                                    <td>
-                                        @item.Description
+                                    <td>                                        
+                                        @Html.Raw(@item.Description)
                                     </td>
                                     <td>
                                         <a href='@("/Admin/EditArbitration?Id=" + @item.Id)' class="btn btn-xs green">Edit</a>

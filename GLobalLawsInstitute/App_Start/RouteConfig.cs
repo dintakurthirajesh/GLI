@@ -16,7 +16,7 @@ namespace GLobalLawsInstitute
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "User", action = "SaveMyCode", id = UrlParameter.Optional }
             );
         }
     }

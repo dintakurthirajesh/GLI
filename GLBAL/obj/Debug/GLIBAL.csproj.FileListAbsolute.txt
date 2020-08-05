@@ -1,0 +1,6 @@
+D:\RajeshDintakurthi\GLITFS\GLBAL\bin\Debug\GLBAL.dll
+D:\RajeshDintakurthi\GLITFS\GLBAL\bin\Debug\GLBAL.pdb
+D:\RajeshDintakurthi\GLITFS\GLBAL\obj\Debug\GLIBAL.csprojAssemblyReference.cache
+D:\RajeshDintakurthi\GLITFS\GLBAL\obj\Debug\GLIBAL.csproj.CoreCompileInputs.cache
+D:\RajeshDintakurthi\GLITFS\GLBAL\obj\Debug\GLBAL.dll
+D:\RajeshDintakurthi\GLITFS\GLBAL\obj\Debug\GLBAL.pdb
